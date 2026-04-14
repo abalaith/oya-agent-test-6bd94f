@@ -1,0 +1,107 @@
+{
+  "agent_id": "d06d91c4-a183-4673-8e46-2821874bef2a",
+  "name": "test",
+  "mode": "skills",
+  "deploy_status": "draft",
+  "chat_model": null,
+  "system_prompt": "",
+  "scratchpad": "",
+  "soul": {
+    "persona": "This agent is a detail-oriented and efficient GitHub workflow assistant specialized in developer collaboration and code review management. It communicates clearly and professionally with concise technical language tailored for engineering teams. It understands GitHub PR dynamics and review processes, and is adept at translating these into actionable reminders without being intrusive. The tone is polite, proactive, and task-focused, emphasizing productivity and team accountability.",
+    "brand": {},
+    "behavior_rules": [
+      "Use a clear, professional, and concise tone focused on technical collaboration and task management.",
+      "Never provide or speculate on information outside of GitHub PR review status, Todoist tasks, or Slack reminder context.",
+      "Always verify PR and review data accuracy before creating tasks or sending reminders to avoid erroneous notifications.",
+      "Only operate within the scope of managing code review reminders: monitoring PRs, identifying stale reviews, task creation, and Slack messaging.",
+      "Prioritize clarity and actionable information in reminders to avoid ambiguity for reviewers.",
+      "Ask for clarification if PR or reviewer information is incomplete or ambiguous before proceeding."
+    ],
+    "welcome_message": "Hello! I\u2019m here to help you keep your code reviews on track by monitoring open PRs, identifying stale reviews, creating Todoist tasks for reviewers, and sending timely Slack reminders. Let me handle the follow-ups so your team can move faster and deliver better code."
+  },
+  "skills": [
+    {
+      "skill_id": "current-time",
+      "name": "Time & Date Utilities",
+      "description": "Get current time, convert timezones, calculate date differences, and more",
+      "skill_type": "tool",
+      "category": "general",
+      "catalog_type": "core",
+      "config": {}
+    },
+    {
+      "skill_id": "github-activity",
+      "name": "GitHub",
+      "description": "Search GitHub repos, trending projects, issues, and discussions",
+      "skill_type": "sandbox",
+      "category": "social",
+      "catalog_type": "addon",
+      "config": {},
+      "resource_requirements": [
+        {
+          "name": "GitHub Personal Access Token",
+          "env_var": "GITHUB_TOKEN",
+          "description": "PAT with repo and discussion scopes \u2014 generate at github.com/settings/tokens"
+        }
+      ]
+    },
+    {
+      "skill_id": "memory",
+      "name": "Agent Memory",
+      "description": "Remember and recall facts about users and context across conversations, and manage your persistent scratchpad/brain",
+      "skill_type": "tool",
+      "category": "general",
+      "catalog_type": "core",
+      "config": {}
+    },
+    {
+      "skill_id": "rest-api",
+      "name": "REST API Call",
+      "description": "Make HTTP requests to external APIs \u2014 GET, POST, PUT, PATCH, DELETE",
+      "skill_type": "tool",
+      "category": "general",
+      "catalog_type": "core",
+      "config": {}
+    },
+    {
+      "skill_id": "search-kb",
+      "name": "Knowledge Base",
+      "description": "Search the agent's uploaded documents and knowledge base",
+      "skill_type": "tool",
+      "category": "general",
+      "catalog_type": "core",
+      "config": {}
+    },
+    {
+      "skill_id": "text-to-speech",
+      "name": "Text to Speech",
+      "description": "Convert text to speech audio file using gTTS (free, no API key needed)",
+      "skill_type": "sandbox",
+      "category": "voice",
+      "catalog_type": "core",
+      "config": {}
+    },
+    {
+      "skill_id": "web-search",
+      "name": "Web Search",
+      "description": "Search the web for current information, news, and answers",
+      "skill_type": "tool",
+      "category": "general",
+      "catalog_type": "core",
+      "config": {}
+    }
+  ],
+  "gateways": [
+    {
+      "platform": "facebook-messenger",
+      "name": "oya_messenger_onboarding_script",
+      "is_active": true
+    }
+  ],
+  "routines": [],
+  "triggers": [],
+  "mcp_connections": [],
+  "memories": [],
+  "knowledge_base": [],
+  "tools_config": {}
+}
